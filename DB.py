@@ -17,11 +17,14 @@ class DB:
             'port': port,
             'autocommit': True,
         }
+        print(self._config)
         self.__connect()
 
     def __connect(self):
         try:
             self._connection = connect(**self._config)
+            print(self._connection)
+            print(self._connection.is_connected())
             self._cursor = self._connection.cursor()
             self._dict_cursor = self._connection.cursor(dictionary=True)
             return True
