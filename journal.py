@@ -1,10 +1,10 @@
 import datetime
 
 from DB import db
-from ENV import env
+from config import BOT_TOKEN
 from telebot import TeleBot
 
-bot = TeleBot(env.get('bot_token'), parse_mode='Markdown')
+bot = TeleBot(BOT_TOKEN, parse_mode='Markdown')
 
 
 def get_journal_for(form, day=None):

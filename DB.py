@@ -1,5 +1,5 @@
 from mysql.connector import connect, Error
-from ENV import env
+from config import *
 
 
 class DB:
@@ -52,11 +52,4 @@ class DB:
             return False
 
 
-db = DB(
-    env.get('db_host'),
-    env.get('db_user'),
-    env.get('db_password'),
-    env.get('db_name'),
-    env.get('db_port'),
-    env.get('db_prefix'),
-)
+db = DB(DB_HOST, DB_USER, DB_PASS, DB_NAME, DB_PORT)
